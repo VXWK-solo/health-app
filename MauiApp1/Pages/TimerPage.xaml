@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiApp1.TimerPage"
+    Title="Секундомер">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Отображение времени -->
+        <Label x:Name="TimeLabel"
+               Text="00:00,00"
+               FontSize="48"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Grid.Row="0"
+               Margin="0,20,0,20" />
+
+        <!-- Кнопки: "Круг", "Старт/Стоп", "Сброс" -->
+        <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center" Spacing="20">
+            <Button x:Name="LapButton"
+                    Text="Круг"
+                    WidthRequest="80"
+                    BackgroundColor="#7f7f7f"
+                    TextColor="White"
+                    Clicked="OnLapClicked" />
+
+            <Button x:Name="StartStopButton"
+                    Text="Старт"
+                    WidthRequest="80"
+                    BackgroundColor="#00BFA5"
+                    TextColor="White"
+                    Clicked="OnStartStopClicked" />
+
+            <Button x:Name="ResetButton"
+                    Text="Сброс"
+                    WidthRequest="80"
+                    BackgroundColor="#ff3333"
+                    TextColor="White"
+                    Clicked="OnResetClicked" />
+        </HorizontalStackLayout>
+
+        <!-- Список кругов -->
+        <CollectionView x:Name="LapsCollectionView"
+                        Grid.Row="2"
+                        ItemsSource="{Binding Laps}"
+                        Margin="0,20,0,0">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <!-- Отображаем номер круга и время -->
+                        <Label Text="{Binding LapNumber}"
+                               FontAttributes="Bold" 
+                               WidthRequest="50"
+                               HorizontalOptions="Start" />
+
+                        <Label Text="{Binding LapTime}"
+                               HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiApp1.RunPage"
+    Title="Бег">
+
+    <Grid>
+        <VerticalStackLayout HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Spacing="20">
+
+            <Label x:Name="StatsLabel"
+                   Text="Время: 0 сек | Калорий: 0"
+                   FontSize="Medium"
+                   HorizontalOptions="Center" />
+
+            <!-- Большая круглая кнопка -->
+            <Button x:Name="TrainingButton"
+                    Text="Начать"
+                    BackgroundColor="#00BFA5"
+                    TextColor="White"
+                    CornerRadius="125"
+                    WidthRequest="250"
+                    HeightRequest="250"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="OnTrainingButtonClicked" />
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiApp1.WorkoutPage"
+    Title="Тренировка"
+    BackgroundColor="#f8f8f8">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="1" BackgroundColor="#f8f8f8">
+            
+            <!-- Бадминтон -->
+            <Grid BackgroundColor="White" Padding="10" ColumnDefinitions="Auto,* ,Auto">
+                <Frame BackgroundColor="#00BFA5" WidthRequest="40" HeightRequest="40" CornerRadius="20" VerticalOptions="Center">
+                    <Image Source="badminton.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
+                <Label Grid.Column="1" Text="Бадминтон" VerticalOptions="Center" Margin="10,0" TextColor="Black"/>
+                <Label Grid.Column="2" Text="✓" VerticalOptions="Center" TextColor="#00BFA5" HorizontalOptions="End" />
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBadmintonTapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <!-- Бег -->
+            <Grid BackgroundColor="White" Padding="10" ColumnDefinitions="Auto,* ,Auto">
+                <Frame BackgroundColor="#00BFA5" WidthRequest="40" HeightRequest="40" CornerRadius="20" VerticalOptions="Center">
+                    <Image Source="run.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
+                <Label Grid.Column="1" Text="Бег" VerticalOptions="Center" Margin="10,0" TextColor="Black"/>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRunTapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+
+            <!-- Баскетбол -->
+            <Grid BackgroundColor="White" Padding="10" ColumnDefinitions="Auto,* ,Auto">
+                <Frame BackgroundColor="#00BFA5" WidthRequest="40" HeightRequest="40" CornerRadius="20" VerticalOptions="Center">
+                    <Image Source="basketball.png" WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
+                <Label Grid.Column="1" Text="Баскетбол" VerticalOptions="Center" Margin="10,0" TextColor="Black"/>
+                
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBasketballTapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

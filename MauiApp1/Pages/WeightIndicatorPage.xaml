@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiApp1.WeightIndicatorPage"
+    Title="Индикатор веса">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20"
+                             VerticalOptions="Start" 
+                             HorizontalOptions="Center">
+
+            <!-- Заголовок / инструкция -->
+            <Label Text="Введите ваши параметры:"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalOptions="Center" />
+
+            <!-- Поле для роста -->
+            <HorizontalStackLayout>
+                <Label Text="Рост (см):" VerticalOptions="Center" />
+                <Entry x:Name="HeightEntry"
+                       WidthRequest="100"
+                       Keyboard="Numeric"
+                       Placeholder="Например, 170"/>
+            </HorizontalStackLayout>
+
+            <!-- Поле для веса -->
+            <HorizontalStackLayout>
+                <Label Text="Вес (кг):" VerticalOptions="Center" />
+                <Entry x:Name="WeightEntry"
+                       WidthRequest="100"
+                       Keyboard="Numeric"
+                       Placeholder="Например, 70"/>
+            </HorizontalStackLayout>
+
+            <!-- Кнопка "Рассчитать" -->
+            <Button Text="Рассчитать"
+                    BackgroundColor="#00BFA5"
+                    TextColor="White"
+                    Clicked="OnCalculateClicked"/>
+
+            <!-- Результат для пользователя -->
+            <Label x:Name="ResultLabel"
+                   Text=""
+                   FontSize="Medium"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,13 +1,10 @@
 ﻿namespace MauiApp1
 {
-    public partial class App : Application
+    public partial class App
     {
         public App()
         {
             InitializeComponent();
-
-            // При запуске приложения откроется AppShell
-            MainPage = new AppShell();
         }
     }
 }
